@@ -4,7 +4,7 @@ import Header from './components/Header';
 import TodoInput from './components/TodoInput';
 import TodoItem from './components/TodoItem';
 
-const API_URL = 'http://localhost:8000';
+const API_URL = 'https://to-do-list-backend-e7wj.onrender.com';
 
 function App() {
   const [todos, setTodos] = useState([]);
