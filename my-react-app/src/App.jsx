@@ -45,7 +45,7 @@ function App() {
         setToken(data.access_token);
         localStorage.setItem("token", data.access_token); // Salva no navegador
       } else {
-        alert("Usuário ou senha incorretos!");
+        alert("Invalid username or password!");
       }
     } else {
       // REGISTRO
@@ -56,10 +56,10 @@ function App() {
       });
 
       if (response.ok) {
-        alert("Conta criada! Agora faça o login.");
+        alert("Account created successfully! Please log in.");
         setIsLoginView(true);
       } else {
-        alert("Erro ao criar conta. O usuário já existe?");
+        alert("Error creating account. The user may already exist?");
       }
     }
   };
@@ -128,7 +128,7 @@ function App() {
           <input 
             type="text" 
             className="auth-input" 
-            placeholder="Usuário" 
+            placeholder="Username" 
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -136,17 +136,17 @@ function App() {
           <input 
             type="password" 
             className="auth-input" 
-            placeholder="Senha" 
+            placeholder="Password" 
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
           <button type="submit" className="auth-button">
-            {isLoginView ? "ENTRAR" : "CRIAR CONTA"}
+            {isLoginView ? "LOGIN" : "CREATE ACCOUNT"}
           </button>
           <div className="auth-toggle" onClick={() => setIsLoginView(!isLoginView)}>
-            {isLoginView ? "Não tem uma conta? " : "Já tem uma conta? "}
-            <span>{isLoginView ? "Registre-se" : "Faça Login"}</span>
+            {isLoginView ? "Don't have an account? " : "Already have an account? "}
+            <span>{isLoginView ? "Sign up" : "Log in"}</span>
           </div>
         </form>
       </div>
@@ -157,7 +157,7 @@ function App() {
   return (
     <div className="app-container">
       <Header />
-      <button className="logout-btn" onClick={handleLogout}>Sair</button>
+      <button className="logout-btn" onClick={handleLogout}>Logout</button>
       <TodoInput addTodo={addTodo} />
       <div className="todo-list">
         {todos.map(todo => (
