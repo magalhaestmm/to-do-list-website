@@ -1,0 +1,203 @@
+/* Base Mobile-First Styles */
+:root {
+  --bg-dark: #121212;
+  --bg-card: #1e1e1e;
+  --accent-cyan: #00f2e6;
+  --accent-cyan-hover: #00c4ba;
+  --accent-red: #ff4d4d;
+  --text-main: #ffffff;
+  --text-muted: #666666;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+/* App Container */
+.app-container {
+  width: 100%;
+  max-width: 500px; /* Constrains width on large screens */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  color: var(--accent-cyan);
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* Todo Input Section */
+.input-container {
+  display: flex;
+  background-color: var(--bg-card);
+  border-radius: 25px;
+  border: 1px solid #333;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.todo-input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  padding: 15px 20px;
+  color: var(--text-main);
+  font-size: 1rem;
+  outline: none;
+}
+
+.todo-input::placeholder {
+  color: var(--text-muted);
+}
+
+.add-button {
+  background-color: var(--accent-cyan);
+  color: #000;
+  border: none;
+  padding: 0 30px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-button:hover {
+  background-color: var(--accent-cyan-hover);
+}
+
+/* Todo Items */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-card);
+  padding: 15px 20px;
+  border-radius: 10px;
+  justify-content: space-between;
+}
+
+.todo-item-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  flex-grow: 1;
+}
+
+.todo-text {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  transition: color 0.2s;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+/* Icons */
+.icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-check {
+  color: var(--accent-cyan);
+}
+
+.icon-circle {
+  color: var(--accent-cyan);
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.2s;
+}
+
+.delete-btn:hover {
+  color: var(--accent-red);
+}
+
+/* Auth Form Styles */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: var(--bg-card);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #333;
+}
+
+.auth-input {
+  background: var(--bg-dark);
+  border: 1px solid #444;
+  padding: 15px;
+  color: var(--text-main);
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.auth-input:focus {
+  border-color: var(--accent-cyan);
+}
+
+.auth-button {
+  background-color: var(--accent-cyan);
+  color: #000;
+  border: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.auth-toggle {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.auth-toggle span {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+}
+
+.logout-btn {
+  background: transparent;
+  color: var(--accent-red);
+  border: 1px solid var(--accent-red);
+  padding: 5px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto 30px auto;
+}
